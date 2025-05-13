@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация API</title>
+    <!-- Swagger UI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css">
+    <!-- Поддержка русского языка -->
+    <script src="https://unpkg.com/swagger-ui-dist@5.11.0/lang/ru.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+        #swagger-ui {
+            padding: 20px 0;
+        }
+        .swagger-ui .topbar {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <div id="swagger-ui"></div>
+
+    <!-- Swagger UI JS -->
+    <script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js"></script>
+    <script>
+        SwaggerUIBundle({
+            url: "openapi.yaml",  
+            dom_id: '#swagger-ui',
+            deepLinking: true,     
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+            ],
+            plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: "StandaloneLayout",
+            validatorUrl: null,    
+            supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+            defaultModelsExpandDepth: -1, 
+            docExpansion: "list",   
+            operationsSorter: "alpha", 
+            tagsSorter: "alpha",   
+            onComplete: function() {
+                if (window.ui) {
+                    window.ui.getConfig().preferredLanguage = 'ru';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
