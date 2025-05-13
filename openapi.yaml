@@ -3,7 +3,7 @@ info:
   title: Работа с заявками
   version: 0.0.1
 servers:
-  - url: https://editor.swagger.io/
+  - url: https://tanya545454.github.io/Api
     description: Dev server
 paths:
   /applications:
